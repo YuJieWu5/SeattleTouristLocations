@@ -15,7 +15,7 @@ The go-to website for exploring the renowned attractions in Seattle, ranging fro
     <p style="font-style: italic;">Once you click the "View" button, the pop-up window will display the location information, and you can rate this place.</p>
 </div>
 <div style="display: flex; justify-content: center;">
-    <img src="src/wwwroot/Images/list" alt="screenshot3" width="350" />
+    <img src="src/wwwroot/Images/list.png" alt="screenshot3" width="350" />
     <p style="font-style: italic;">We also provide a list page where users can manage locations easily.</p>
 </div>
 <div style="display: flex; justify-content: center;">
