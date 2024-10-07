@@ -1,15 +1,29 @@
-# ContosoCrafts
+# Seattle Tourist Locations
 
-## Tutorial
+<img src="src/wwwroot/Images/home.png" alt="Home Page" width="600" />
 
-- [ASP.NET Tutorial](https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro)
+The go-to website for exploring the renowned attractions in Seattle, ranging from scenic landscapes to popular restaurants and charming teashops. Our platform consolidates extensive location data, empowering visitors to rate, update information, add new locations, and manage location data with ease.
 
-## Gists
+## Screenshots
 
-- [Gist](https://gist.github.com/bradygaster/3d1fcf43d1d1e73ea5d6c1b5aab40130) referenced in the videos
+<div style="display: flex; justify-content: center;">
+    <img src="src/wwwroot/Images/home.png" alt="screenshot1" width="350" />
+        <p style="font-style: italic;">On the welcome page, you can view all locations here.</p>
+</div>
+<div style="display: flex; justify-content: center;">
+    <img src="src/wwwroot/Images/pop-up.png" alt="screenshot2" width="350" /> 
+    <p style="font-style: italic;">Once you click the "View" button, the pop-up window will display the location information, and you can rate this place.</p>
+</div>
+<div style="display: flex; justify-content: center;">
+    <img src="src/wwwroot/Images/list" alt="screenshot3" width="350" />
+    <p style="font-style: italic;">We also provide a list page where users can manage locations easily.</p>
+</div>
+<div style="display: flex; justify-content: center;">
+    <img src="src/wwwroot/Images/home.png" alt="screenshot4" width="350" />
+    <p style="font-style: italic;">Once user clicks the "Edit" button, it will display the form that user can edit the location information.</p>
+</div>
 
-## YouTube Playlist
+## License
 
-- [ASP.NET Core 101](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy)
+Seattle Tourist Locations is released under the [MIT License](/path/to/license).
 
-13 part series
