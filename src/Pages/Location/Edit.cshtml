@@ -1,0 +1,100 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Enums;
+@using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Models
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.EditModel
+
+@{
+    ViewData["Title"] = "Edit page";
+}
+
+<h2>Edit</h2>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x => x.Product.Id)
+
+        <!--This section allows the user to modify the existing location's Title-->
+        <div class="form-group">
+            <div class="edit-text">
+                <label asp-for="Product.Title" class="control-label"></label>
+                *
+            </div>
+            <input asp-for="Product.Title" class="form-control" required />
+            <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+
+        <!--This section allows the user to modify the existing location's descritpion-->
+        <div class="form-group">
+            <div class="edit-text">
+                <label asp-for="Product.Description" class="control-label"></label>
+                *
+            </div>
+            <input asp-for="Product.Description" class="form-control" required />
+            <span asp-validation-for="Product.Description" class="text-danger"></span>
+        </div>
+
+        <!--This section allows the user to modify the existing location's location-->
+        <div class="form-group">
+            <div class="edit-text">
+                <label asp-for="Product.Location" class="control-label"></label>
+                *
+            </div>
+            <input asp-for="Product.Location" class="form-control" required />
+            <span asp-validation-for="Product.Location" class="text-danger"></span>
+        </div>
+
+        <!--This section allows the user to modify the existing location's image url-->
+        <div class="form-group">
+            <div class="edit-text">
+                <label asp-for="Product.Image" class="control-label"></label>
+                *
+            </div>
+            <input asp-for="Product.Image" class="form-control" required />
+            <span asp-validation-for="Product.Image" class="text-danger"></span>
+        </div>
+
+        <!--This section allows the user to modify the existing location's contact number, (not required)-->
+        <div class="form-group">
+            <label asp-for="Product.ContactNumber" class="control-label edit-text">Contact Number</label>
+            <input asp-for="Product.ContactNumber" class="form-control" />
+            <span asp-validation-for="Product.ContactNumber" class="text-danger"></span>
+        </div>
+
+        <!--This section allows the user to modify the existing location's embedded link (for google maps)-->
+        <div class="form-group">
+            <div class="edit-text">
+                <label asp-for="Product.E_link" class="control-label">Embedded Link</label>
+                *
+            </div>
+            <input asp-for="Product.E_link" class="form-control" required />
+            <span asp-validation-for="Product.E_link" class="text-danger"></span>
+        </div>
+
+        <!--Allow the user to select from a drop down to change the catagory type-->
+        <div class="from-group">
+            <label asp-for="Product.LocationCategory" class="control-label edit-text">Location Catagory</label>
+            <select class="form-control"
+                    asp-for="Product.LocationCategory"
+                    asp-items="Html.GetEnumSelectList<LocationCategoryEnum>()">
+            </select>
+        </div>
+
+        <hr />
+        <div class="edit-text">* Fields must be populated before saving</div>
+        <hr />
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a class="btn btn-light" asp-page="/Location/Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

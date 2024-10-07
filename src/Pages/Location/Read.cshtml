@@ -1,0 +1,28 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.ReadModel
+
+@{
+    ViewData["Title"] = "Read page";
+}
+
+<div class="content">
+    <!--This is elemant is used to navigate back to the source page-->
+    <a class="btn btn-dark btn-sm" asp-page="/Location/Index">< Back</a>
+
+    <!--These elements display information to the user-->
+    <h2 class="title" id="productTitle">@Model.Product?.Title</h2>
+    <img class="card-img" src="@Model.Product?.Image" alt='Image for @Model.Product?.Title'>
+    <p class="card-text">@Model.Product?.Description</p>
+    <br />
+    <p class="card-text">@Model.Product?.Location</p>
+    <br/>
+    <p class="card-text">Contact us : @Model.Product?.ContactNumber</p>
+    <br />
+    <!-- Mapping section, an update to the style of this section is needed-->
+    <div>
+        <iframe src=@Model.Product?.E_link width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</div>

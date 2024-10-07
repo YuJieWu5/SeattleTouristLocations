@@ -1,0 +1,21 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete page";
+}
+
+<div class="content">
+    <h2 class="title" id="productTitle">@Model.Product?.Title</h2>
+
+    <img class="card-img" src="@Model.Product?.Image" alt='Image for @Model.Product?.Title'>
+    <p class="card-text">@Model.Product?.Description</p>
+    <br />
+    <p class="card-text">@Model.Product?.Location</p>
+    <form method="post">
+        <input type="submit" value="Delete" class="btn btn-primary" />
+        <a class="btn btn-light" asp-page="/Location/Index">Cancel</a>
+    </form>
+</div>

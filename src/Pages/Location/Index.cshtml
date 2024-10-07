@@ -1,0 +1,37 @@
+﻿@page
+@model ContosoCrafts.WebSite.Pages.Product.IndexModel
+@{
+    ViewData["Title"] = "Index page";
+}
+
+<div class="container">
+    <a class="btn btn-light mb-2 create-btn" asp-page="Create"><i class="fa-solid fa-plus"></i> Create Location</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="index-text">Locations</th>
+                <th class="d-none d-sm-table-cell index-text">View Location</th>
+                <th class="d-none d-sm-table-cell index-text">Update Location</th>
+                <th class="d-none d-sm-table-cell index-text">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td class="index-text">@product.Title</td>
+                    <td class="d-none d-sm-table-cell"><a asp-page="Read" asp-route-id="@product.Id"><i class="fa-brands fa-readme"></i> Read</a></td>
+                    <td class="d-none d-sm-table-cell"><a asp-page="Edit" asp-route-id="@product.Id"><i class="fa-solid fa-pen-to-square"></i> Edit</a></td>
+                    <td class="d-none d-sm-table-cell"><a asp-page="Delete" asp-route-id="@product.Id"><i class="fa-solid fa-trash"></i> Delete</a></td>
+                    <td class="d-table-cell d-sm-none">
+                        <div class="d-flex flex-column">
+                            <a class="btn btn-primary mb-1" asp-page="Read" asp-route-id="@product.Id">Read</a>
+                            <a class="btn btn-primary mb-1" asp-page="Edit" asp-route-id="@product.Id">Edit</a>
+                            <a class="btn btn-primary" asp-page="Delete" asp-route-id="@product.Id">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
